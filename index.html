@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Podforge AI</title>
+    <link rel="stylesheet" href="./src/styles.css">
+    <script type="module" src="./src/app.js"></script>
+  </head>
+  <body>
+    <main>
+      <section class="studio-card" aria-labelledby="page-title">
+        <p class="eyebrow">Podcast video studio</p>
+        <h1 id="page-title">Shape your AI episode</h1>
+        <p class="lede">
+          Start with the episode length so Podforge AI can pace the conversation,
+          scene changes, and speaker turns.
+        </p>
+
+        <form data-episode-form>
+          <fieldset>
+            <legend>Choose duration</legend>
+
+            <label for="duration-range">
+              Episode length must be between 1 and 30 minutes.
+            </label>
+
+            <div class="duration-row">
+              <input
+                id="duration-range"
+                data-duration-range
+                type="range"
+                min="1"
+                max="30"
+                step="1"
+                value="15"
+                aria-describedby="duration-value duration-help"
+              >
+
+              <input
+                data-duration-number
+                type="number"
+                min="1"
+                max="30"
+                step="1"
+                value="15"
+                aria-label="Duration in minutes"
+              >
+            </div>
+
+            <strong id="duration-value" class="duration-value" data-duration-value>
+              15 min
+            </strong>
+            <p id="duration-help">Use a whole number from 1 to 30 minutes.</p>
+          </fieldset>
+
+          <p class="status" role="alert" data-status-message></p>
+          <button type="submit">Create episode</button>
+          <p class="summary" data-episode-summary hidden></p>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
