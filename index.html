@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Podforge AI - Topic Builder</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="module" src="./src/app.js"></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero" aria-labelledby="page-title">
+        <p class="eyebrow">Podforge AI</p>
+        <h1 id="page-title">Start with a podcast topic</h1>
+        <p class="hero-copy">
+          Enter the core idea for your episode and Podforge will turn it into a clear starting brief.
+        </p>
+      </section>
+
+      <section class="topic-card" aria-labelledby="topic-form-title">
+        <div class="card-header">
+          <h2 id="topic-form-title">What should this podcast be about?</h2>
+          <p>Use a sentence, question, guest theme, or niche you want to explore.</p>
+        </div>
+
+        <form id="topic-form" novalidate>
+          <label for="topic-input">Podcast topic</label>
+          <textarea
+            id="topic-input"
+            name="topic"
+            rows="5"
+            minlength="3"
+            maxlength="160"
+            placeholder="Example: How independent coffee shops build loyal neighborhood communities"
+            aria-describedby="topic-help topic-error topic-count"
+            required
+          ></textarea>
+          <div class="input-meta">
+            <p id="topic-help">Be specific enough to guide tone, audience, and episode direction.</p>
+            <p id="topic-count" aria-live="polite">0/160</p>
+          </div>
+          <p id="topic-error" class="error-message" role="alert"></p>
+          <button type="submit">Create topic brief</button>
+        </form>
+
+        <article id="topic-result" class="result-card" hidden aria-live="polite">
+          <p class="eyebrow">Episode seed</p>
+          <h3 id="result-title"></h3>
+          <dl>
+            <div>
+              <dt>Audience promise</dt>
+              <dd id="result-promise"></dd>
+            </div>
+            <div>
+              <dt>Opening question</dt>
+              <dd id="result-question"></dd>
+            </div>
+          </dl>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
